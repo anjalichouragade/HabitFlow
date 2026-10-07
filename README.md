@@ -1,4 +1,4 @@
-# HabitFlow 🌱
+# HabitFlow 🐬
 
 A simple and user-friendly daily habit tracker to create, manage, and track your habits, progress, and streaks.
 
