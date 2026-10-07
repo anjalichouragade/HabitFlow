@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitFlow - Daily Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="logo">🌸</div>
+                <div>
+                    <h1>HabitFlow</h1>
+                    <p>Daily Habit Tracker</p>
+                </div>
+            </div>
+
+            <div class="date-box">
+                <span id="todayDate"></span>
+            </div>
+        </header>
+
+        <!-- Welcome -->
+        <section class="welcome">
+            <h2>Good morning! 👋</h2>
+            <p>Let's keep your habits going.</p>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div>
+                    <span class="stat-value" id="overallStreak">0</span>
+                    <span class="stat-label">Day Streak</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✓</div>
+                <div>
+                    <span class="stat-value" id="completionRate">0%</span>
+                    <span class="stat-label">Today Complete</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🌱</div>
+                <div>
+                    <span class="stat-value" id="totalHabits">0</span>
+                    <span class="stat-label">Total Habits</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Today's Habits -->
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Today's Habits</h2>
+                    <p>Check off what you've completed today.</p>
+                </div>
+
+                <button class="add-btn" onclick="openModal()">
+                    + Add Habit
+                </button>
+            </div>
+
+            <div id="habitList" class="habit-list"></div>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">🌱</div>
+                <h3>No habits yet</h3>
+                <p>Add your first habit and start building your routine.</p>
+                <button class="empty-btn" onclick="openModal()">
+                    + Add Your First Habit
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Weekly Progress -->
+        <section class="section weekly-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Weekly Progress</h2>
+                    <p>Your activity for the last 7 days.</p>
+                </div>
+            </div>
+
+            <div id="weeklyProgress" class="weekly-progress"></div>
+
+        </section>
+
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div id="habitModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div>
+                    <h2 id="modalTitle">Add Habit</h2>
+                    <p>Create a habit to track every day.</p>
+                </div>
+
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+
+            <label for="habitName">Habit Name</label>
+            <input
+                type="text"
+                id="habitName"
+                placeholder="e.g. Study C++"
+            >
+
+            <label for="habitCategory">Category</label>
+            <input
+                type="text"
+                id="habitCategory"
+                placeholder="e.g. Study"
+            >
+
+            <div class="modal-actions">
+                <button class="cancel-btn" onclick="closeModal()">
+                    Cancel
+                </button>
+
+                <button class="save-btn" onclick="saveHabit()">
+                    Save Habit
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
